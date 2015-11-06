@@ -48,7 +48,7 @@
 }
 
 - (IBAction)generateHandle:(id)sender {
-    UIImage *qrcode = [self createNonInterpolatedUIImageFormCIImage:[self createQRForString:@"http://blog.yourtion.com"] withSize:250.0f];
+    UIImage *qrcode = [self createNonInterpolatedUIImageFormCIImage:[self createQRForString:@"http://www.chenshengzhi.name"] withSize:200.0f];
     UIImage *customQrcode = [self imageBlackToTransparent:qrcode withRed:60.0f andGreen:74.0f andBlue:89.0f];
     
     UIViewController *vc = [[UIViewController alloc] init];
