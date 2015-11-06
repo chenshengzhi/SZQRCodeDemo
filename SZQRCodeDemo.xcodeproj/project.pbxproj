@@ -17,6 +17,7 @@
 		243A511E1BEC762B00E04B1A /* SZQRCodeDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 243A511D1BEC762B00E04B1A /* SZQRCodeDemoUITests.m */; };
 		243A51351BEC937E00E04B1A /* SZQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243A51341BEC937E00E04B1A /* SZQRCodeViewController.m */; };
 		243A51391BEC93C300E04B1A /* SZCropFillView.m in Sources */ = {isa = PBXBuildFile; fileRef = 243A51381BEC93C300E04B1A /* SZCropFillView.m */; };
+		243A517C1BECA8CF00E04B1A /* generate.png in Resources */ = {isa = PBXBuildFile; fileRef = 243A517B1BECA8CF00E04B1A /* generate.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		243A51341BEC937E00E04B1A /* SZQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZQRCodeViewController.m; sourceTree = "<group>"; };
 		243A51371BEC93C300E04B1A /* SZCropFillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZCropFillView.h; sourceTree = "<group>"; };
 		243A51381BEC93C300E04B1A /* SZCropFillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZCropFillView.m; sourceTree = "<group>"; };
+		243A517B1BECA8CF00E04B1A /* generate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = generate.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		243A50F71BEC762B00E04B1A /* SZQRCodeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				243A517B1BECA8CF00E04B1A /* generate.png */,
 				243A50FB1BEC762B00E04B1A /* AppDelegate.h */,
 				243A50FC1BEC762B00E04B1A /* AppDelegate.m */,
 				243A50FE1BEC762B00E04B1A /* ViewController.h */,
@@ -271,6 +274,7 @@
 			files = (
 				243A51081BEC762B00E04B1A /* LaunchScreen.storyboard in Resources */,
 				243A51051BEC762B00E04B1A /* Assets.xcassets in Resources */,
+				243A517C1BECA8CF00E04B1A /* generate.png in Resources */,
 				243A51031BEC762B00E04B1A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,20 +17,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfC-9e-4cm">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfC-9e-4cm" userLabel="detectVideo">
+                                <rect key="frame" x="258" y="114" width="84" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="detectVideo"/>
                                 <connections>
                                     <action selector="startQRCodeHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cfa-4l-kWS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odh-Em-U3v" userLabel="generate">
+                                <rect key="frame" x="269" y="194" width="62" height="30"/>
+                                <animations/>
+                                <state key="normal" title="generate"/>
+                                <connections>
+                                    <action selector="generateHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yM0-cq-wU2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URn-gk-pzO" userLabel="detectImage">
+                                <rect key="frame" x="257" y="274" width="87" height="30"/>
+                                <animations/>
+                                <state key="normal" title="detectImage"/>
+                                <connections>
+                                    <action selector="detectImageHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Je8-A6-SfK"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kfC-9e-4cm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1sx-sO-2QH"/>
-                            <constraint firstItem="kfC-9e-4cm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Imm-6V-wz3"/>
+                            <constraint firstItem="kfC-9e-4cm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2vE-rG-XNp"/>
+                            <constraint firstItem="URn-gk-pzO" firstAttribute="top" secondItem="Odh-Em-U3v" secondAttribute="bottom" constant="50" id="5ci-2O-EJ0"/>
+                            <constraint firstItem="Odh-Em-U3v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ONQ-Gp-fQg"/>
+                            <constraint firstItem="kfC-9e-4cm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="mj7-UN-Amo"/>
+                            <constraint firstItem="URn-gk-pzO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ssl-rP-oeh"/>
+                            <constraint firstItem="Odh-Em-U3v" firstAttribute="top" secondItem="kfC-9e-4cm" secondAttribute="bottom" constant="50" id="z5c-Z8-KLW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qjA-oy-R3u"/>
