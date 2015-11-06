@@ -32,6 +32,7 @@
     [SZQRCodeViewController detectPermissionWithBlock:^(BOOL permit) {
         if (permit) {
             SZQRCodeViewController *vc = [[SZQRCodeViewController alloc] initWithScaneResultBlock:^(BOOL success, NSString *stringValue) {
+                [weakSelf.navigationController popViewControllerAnimated:NO];
                 if (success) {
                     NSLog(@"-----\n%@", stringValue);
                     if ([stringValue.lowercaseString hasPrefix:@"http://"] || [stringValue.lowercaseString hasPrefix:@"https://"]) {
@@ -40,7 +41,6 @@
                         });
                     }
                 }
-                [weakSelf.navigationController popViewControllerAnimated:YES];
             }];
             [weakSelf.navigationController pushViewController:vc animated:YES];
         }

@@ -123,6 +123,8 @@
 
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate -
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
+    [_captureSession stopRunning];
+    
     AVMetadataMachineReadableCodeObject *codeObject = metadataObjects.firstObject;
     if (codeObject) {
         if (_scaneResultBlock) {
