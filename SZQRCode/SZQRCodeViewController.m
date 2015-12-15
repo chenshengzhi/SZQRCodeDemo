@@ -110,24 +110,21 @@
     metadataOutput.rectOfInterest = [previewLayer metadataOutputRectOfInterestForRect:_maskView.areaRectWithoutCover];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [_captureSession startRunning];
-}
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
     [_captureSession stopRunning];
+    [_maskView stopDetectionAnimation];
 }
 
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate -
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
     [_captureSession stopRunning];
+    [_maskView stopDetectionAnimation];
     
     AVMetadataMachineReadableCodeObject *codeObject = metadataObjects.firstObject;
     if (codeObject) {
+        NSLog(@"%@", codeObject.stringValue);
         if (_scaneResultBlock) {
             _scaneResultBlock(YES, [codeObject.stringValue copy]);
         }
