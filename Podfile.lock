@@ -1,0 +1,10 @@
+PODS:
+  - SZQRCodeCoverView (0.0.1)
+
+DEPENDENCIES:
+  - SZQRCodeCoverView (~> 0.0.1)
+
+SPEC CHECKSUMS:
+  SZQRCodeCoverView: 24100d6cb17f5c691dde18ba09101087a8c26987
+
+COCOAPODS: 0.39.0

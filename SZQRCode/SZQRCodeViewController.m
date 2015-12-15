@@ -7,12 +7,12 @@
 //
 
 #import "SZQRCodeViewController.h"
-#import "SZCropFillView.h"
+#import "SZQRCodeCoverView.h"
 @import AVFoundation;
 
 @interface SZQRCodeViewController () <AVCaptureMetadataOutputObjectsDelegate>
 
-@property (nonatomic, strong) SZCropFillView *maskView;
+@property (nonatomic, strong) SZQRCodeCoverView *maskView;
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 
 @end
@@ -81,12 +81,13 @@
         
     self.view.backgroundColor = [UIColor whiteColor];
     
-    _maskView = [[SZCropFillView alloc] initWithFrame:self.view.bounds];
+    _maskView = [[SZQRCodeCoverView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:_maskView];
     
     [self initCapture];
     
     [_captureSession startRunning];
+    [_maskView startScanAnimation];
 }
 
 - (void)initCapture {
@@ -106,7 +107,7 @@
     previewLayer.frame = self.view.bounds;
     previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     [self.view.layer insertSublayer:previewLayer atIndex:0];
-    metadataOutput.rectOfInterest = [previewLayer metadataOutputRectOfInterestForRect:_maskView.noFillRect];
+    metadataOutput.rectOfInterest = [previewLayer metadataOutputRectOfInterestForRect:_maskView.areaRectWithoutCover];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
