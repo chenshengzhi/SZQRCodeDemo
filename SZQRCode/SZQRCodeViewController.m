@@ -87,7 +87,7 @@
     [self initCapture];
     
     [_captureSession startRunning];
-    [_maskView startScanAnimation];
+    [_maskView startDetectionAnimation];
 }
 
 - (void)initCapture {

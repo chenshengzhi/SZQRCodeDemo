@@ -16,7 +16,6 @@
 		243A51131BEC762B00E04B1A /* SZQRCodeDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 243A51121BEC762B00E04B1A /* SZQRCodeDemoTests.m */; };
 		243A511E1BEC762B00E04B1A /* SZQRCodeDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 243A511D1BEC762B00E04B1A /* SZQRCodeDemoUITests.m */; };
 		243A51351BEC937E00E04B1A /* SZQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243A51341BEC937E00E04B1A /* SZQRCodeViewController.m */; };
-		243A51391BEC93C300E04B1A /* SZCropFillView.m in Sources */ = {isa = PBXBuildFile; fileRef = 243A51381BEC93C300E04B1A /* SZCropFillView.m */; };
 		243A517C1BECA8CF00E04B1A /* generate.png in Resources */ = {isa = PBXBuildFile; fileRef = 243A517B1BECA8CF00E04B1A /* generate.png */; };
 		2F2828D0438F4DDADD2AC91D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C821BE89B193871A6CAA01 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -57,8 +56,6 @@
 		243A511F1BEC762B00E04B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		243A51331BEC937E00E04B1A /* SZQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZQRCodeViewController.h; sourceTree = "<group>"; };
 		243A51341BEC937E00E04B1A /* SZQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZQRCodeViewController.m; sourceTree = "<group>"; };
-		243A51371BEC93C300E04B1A /* SZCropFillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZCropFillView.h; sourceTree = "<group>"; };
-		243A51381BEC93C300E04B1A /* SZCropFillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZCropFillView.m; sourceTree = "<group>"; };
 		243A517B1BECA8CF00E04B1A /* generate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = generate.png; sourceTree = "<group>"; };
 		30C821BE89B193871A6CAA01 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C64EFAA3323006DD54954B6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,7 +91,6 @@
 		243A50EC1BEC762B00E04B1A = {
 			isa = PBXGroup;
 			children = (
-				243A51361BEC93C300E04B1A /* SZCropFillView */,
 				243A51321BEC937400E04B1A /* SZQRCode */,
 				243A50F71BEC762B00E04B1A /* SZQRCodeDemo */,
 				243A51111BEC762B00E04B1A /* SZQRCodeDemoTests */,
@@ -165,15 +161,6 @@
 				243A51341BEC937E00E04B1A /* SZQRCodeViewController.m */,
 			);
 			path = SZQRCode;
-			sourceTree = "<group>";
-		};
-		243A51361BEC93C300E04B1A /* SZCropFillView */ = {
-			isa = PBXGroup;
-			children = (
-				243A51371BEC93C300E04B1A /* SZCropFillView.h */,
-				243A51381BEC93C300E04B1A /* SZCropFillView.m */,
-			);
-			path = SZCropFillView;
 			sourceTree = "<group>";
 		};
 		6959D63D28C6CE3B468966D8 /* Pods */ = {
@@ -377,7 +364,6 @@
 			files = (
 				243A51001BEC762B00E04B1A /* ViewController.m in Sources */,
 				243A51351BEC937E00E04B1A /* SZQRCodeViewController.m in Sources */,
-				243A51391BEC93C300E04B1A /* SZCropFillView.m in Sources */,
 				243A50FD1BEC762B00E04B1A /* AppDelegate.m in Sources */,
 				243A50FA1BEC762B00E04B1A /* main.m in Sources */,
 			);
