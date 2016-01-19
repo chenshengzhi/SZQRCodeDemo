@@ -108,6 +108,17 @@
     previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     [self.view.layer insertSublayer:previewLayer atIndex:0];
     metadataOutput.rectOfInterest = [previewLayer metadataOutputRectOfInterestForRect:_maskView.areaRectWithoutCover];
+    
+    if (device.isFocusPointOfInterestSupported && [device isFocusModeSupported:AVCaptureFocusModeContinuousAutoFocus]) {
+        NSError *error = nil;
+        [device lockForConfiguration:&error];
+        if (!error) {
+            [device setFocusMode:AVCaptureFocusModeContinuousAutoFocus];
+            CGRect rectOfInterest = metadataOutput.rectOfInterest;
+            [device setFocusPointOfInterest:CGPointMake(rectOfInterest.origin.x + rectOfInterest.size.width/2, rectOfInterest.origin.y + rectOfInterest.size.height/2)];
+            [device unlockForConfiguration];
+        }
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
