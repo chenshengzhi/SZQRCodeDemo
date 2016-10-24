@@ -17,7 +17,7 @@
 		243A511E1BEC762B00E04B1A /* SZQRCodeDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 243A511D1BEC762B00E04B1A /* SZQRCodeDemoUITests.m */; };
 		243A51351BEC937E00E04B1A /* SZQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243A51341BEC937E00E04B1A /* SZQRCodeViewController.m */; };
 		243A517C1BECA8CF00E04B1A /* generate.png in Resources */ = {isa = PBXBuildFile; fileRef = 243A517B1BECA8CF00E04B1A /* generate.png */; };
-		2F2828D0438F4DDADD2AC91D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C821BE89B193871A6CAA01 /* libPods.a */; };
+		798B0EF3CAE3D31FAF6B376D /* libPods-SZQRCodeDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D04249E07E8456EE28A001B /* libPods-SZQRCodeDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,9 +57,9 @@
 		243A51331BEC937E00E04B1A /* SZQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZQRCodeViewController.h; sourceTree = "<group>"; };
 		243A51341BEC937E00E04B1A /* SZQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZQRCodeViewController.m; sourceTree = "<group>"; };
 		243A517B1BECA8CF00E04B1A /* generate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = generate.png; sourceTree = "<group>"; };
-		30C821BE89B193871A6CAA01 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C64EFAA3323006DD54954B6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		6573823787B264A6F95D7E82 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		6A89EAAC6AE3FD47C661623D /* Pods-SZQRCodeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZQRCodeDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SZQRCodeDemo/Pods-SZQRCodeDemo.release.xcconfig"; sourceTree = "<group>"; };
+		8D04249E07E8456EE28A001B /* libPods-SZQRCodeDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SZQRCodeDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA55C68234A7E1C4685EF592 /* Pods-SZQRCodeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SZQRCodeDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SZQRCodeDemo/Pods-SZQRCodeDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F2828D0438F4DDADD2AC91D /* libPods.a in Frameworks */,
+				798B0EF3CAE3D31FAF6B376D /* libPods-SZQRCodeDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,8 +96,8 @@
 				243A51111BEC762B00E04B1A /* SZQRCodeDemoTests */,
 				243A511C1BEC762B00E04B1A /* SZQRCodeDemoUITests */,
 				243A50F61BEC762B00E04B1A /* Products */,
-				6959D63D28C6CE3B468966D8 /* Pods */,
-				F3199E4E51E414541EF55B07 /* Frameworks */,
+				744D996046B492C799681FAC /* Pods */,
+				E2F3D46E51AC3E635913C13D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,19 +163,19 @@
 			path = SZQRCode;
 			sourceTree = "<group>";
 		};
-		6959D63D28C6CE3B468966D8 /* Pods */ = {
+		744D996046B492C799681FAC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5C64EFAA3323006DD54954B6 /* Pods.debug.xcconfig */,
-				6573823787B264A6F95D7E82 /* Pods.release.xcconfig */,
+				EA55C68234A7E1C4685EF592 /* Pods-SZQRCodeDemo.debug.xcconfig */,
+				6A89EAAC6AE3FD47C661623D /* Pods-SZQRCodeDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F3199E4E51E414541EF55B07 /* Frameworks */ = {
+		E2F3D46E51AC3E635913C13D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				30C821BE89B193871A6CAA01 /* libPods.a */,
+				8D04249E07E8456EE28A001B /* libPods-SZQRCodeDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -187,12 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 243A51221BEC762B00E04B1A /* Build configuration list for PBXNativeTarget "SZQRCodeDemo" */;
 			buildPhases = (
-				5F592673DAE245115EEAD416 /* Check Pods Manifest.lock */,
+				FD28A7FFA9853F5DA1F0DDB8 /* [CP] Check Pods Manifest.lock */,
 				243A50F11BEC762B00E04B1A /* Sources */,
 				243A50F21BEC762B00E04B1A /* Frameworks */,
 				243A50F31BEC762B00E04B1A /* Resources */,
-				B47A7924CE014448865A63A8 /* Embed Pods Frameworks */,
-				C1CCEA12C3FE59D3D6B6E9EE /* Copy Pods Resources */,
+				0E2A06782FE54602A7C3C61C /* [CP] Embed Pods Frameworks */,
+				C7834BC5C107D29275F145C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,11 +245,12 @@
 		243A50ED1BEC762B00E04B1A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = shengzhichen;
 				TargetAttributes = {
 					243A50F41BEC762B00E04B1A = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = U3N6PE6F6K;
 					};
 					243A510D1BEC762B00E04B1A = {
 						CreatedOnToolsVersion = 7.1;
@@ -310,49 +311,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5F592673DAE245115EEAD416 /* Check Pods Manifest.lock */ = {
+		0E2A06782FE54602A7C3C61C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SZQRCodeDemo/Pods-SZQRCodeDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B47A7924CE014448865A63A8 /* Embed Pods Frameworks */ = {
+		C7834BC5C107D29275F145C9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SZQRCodeDemo/Pods-SZQRCodeDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C1CCEA12C3FE59D3D6B6E9EE /* Copy Pods Resources */ = {
+		FD28A7FFA9853F5DA1F0DDB8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -433,8 +434,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -456,7 +459,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -476,8 +479,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -493,7 +498,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -502,24 +507,26 @@
 		};
 		243A51231BEC762B00E04B1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C64EFAA3323006DD54954B6 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = EA55C68234A7E1C4685EF592 /* Pods-SZQRCodeDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U3N6PE6F6K;
 				INFOPLIST_FILE = SZQRCodeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shengzhichen.7SZQRCodeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shengzhichen.SZQRCodeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		243A51241BEC762B00E04B1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6573823787B264A6F95D7E82 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 6A89EAAC6AE3FD47C661623D /* Pods-SZQRCodeDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U3N6PE6F6K;
 				INFOPLIST_FILE = SZQRCodeDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shengzhichen.7SZQRCodeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shengzhichen.SZQRCodeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

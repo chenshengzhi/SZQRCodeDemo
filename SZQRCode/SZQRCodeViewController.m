@@ -20,20 +20,8 @@
 @implementation SZQRCodeViewController
 
 + (void)detectPermissionWithBlock:(SZQRCodeDetectPermissionBlock)block {
-    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    if (!device) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"没有可用的相机"
-                                                            message:nil
-                                                           delegate:nil
-                                                  cancelButtonTitle:nil
-                                                  otherButtonTitles:@"确定", nil];
-        [alertView show];
-        return;
-    }
-    
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if (authStatus == AVAuthorizationStatusDenied || authStatus == AVAuthorizationStatusRestricted) {
-        [SZQRCodeViewController showNoPermisstionNotice];
         if (block) {
             block(NO);
         }
@@ -45,7 +33,6 @@
                         block(YES);
                     }
                 } else {
-                    [SZQRCodeViewController showNoPermisstionNotice];
                     if (block) {
                         block(NO);
                     }
@@ -57,15 +44,6 @@
             block(YES);
         }
     }
-}
-
-+ (void)showNoPermisstionNotice {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"没有权限访问相机"
-                                                        message:@"请在 \"设置 - 隐私 - 相机\" 设置允许访问相机。"
-                                                       delegate:nil
-                                              cancelButtonTitle:nil
-                                              otherButtonTitles:@"确定", nil];
-    [alertView show];
 }
 
 #pragma mark - life cycle -
@@ -81,33 +59,30 @@
         
     self.view.backgroundColor = [UIColor whiteColor];
     
-    _maskView = [[SZQRCodeCoverView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:_maskView];
+    self.maskView = [[SZQRCodeCoverView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:self.maskView];
     
     [self initCapture];
-    
-    [_captureSession startRunning];
-    [_maskView startDetectionAnimation];
 }
 
 - (void)initCapture {
-    _captureSession = [[AVCaptureSession alloc] init];
+    self.captureSession = [[AVCaptureSession alloc] init];
     
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     AVCaptureDeviceInput *deviceInput = [[AVCaptureDeviceInput alloc] initWithDevice:device error:nil];
-    [_captureSession addInput:deviceInput];
+    [self.captureSession addInput:deviceInput];
     AVCaptureMetadataOutput *metadataOutput = [[AVCaptureMetadataOutput alloc] init];
-    [_captureSession addOutput:metadataOutput];
+    [self.captureSession addOutput:metadataOutput];
     [metadataOutput setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     if ([metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeQRCode]) {
         metadataOutput.metadataObjectTypes = [NSArray arrayWithObject:AVMetadataObjectTypeQRCode];
     }
     
-    AVCaptureVideoPreviewLayer *previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:_captureSession];
+    AVCaptureVideoPreviewLayer *previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.captureSession];
     previewLayer.frame = self.view.bounds;
     previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     [self.view.layer insertSublayer:previewLayer atIndex:0];
-    metadataOutput.rectOfInterest = [previewLayer metadataOutputRectOfInterestForRect:_maskView.areaRectWithoutCover];
+    metadataOutput.rectOfInterest = [previewLayer metadataOutputRectOfInterestForRect:self.maskView.areaRectWithoutCover];
     
     if (device.isFocusPointOfInterestSupported && [device isFocusModeSupported:AVCaptureFocusModeContinuousAutoFocus]) {
         NSError *error = nil;
@@ -121,17 +96,24 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    [self.captureSession startRunning];
+    [self.maskView startDetectionAnimation];
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    [_captureSession stopRunning];
-    [_maskView stopDetectionAnimation];
+    [self.captureSession stopRunning];
+    [self.maskView stopDetectionAnimation];
 }
 
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate -
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
-    [_captureSession stopRunning];
-    [_maskView stopDetectionAnimation];
+    [self.captureSession stopRunning];
+    [self.maskView stopDetectionAnimation];
     
     AVMetadataMachineReadableCodeObject *codeObject = metadataObjects.firstObject;
     if (codeObject) {

@@ -1,4 +1,5 @@
-platform :ios, '7.0'
+platform :ios, '8.0'
 
-pod 'SZQRCodeCoverView', '~> 0.0.3'
-
+target 'SZQRCodeDemo' do
+    pod 'SZQRCodeCoverView'
+end

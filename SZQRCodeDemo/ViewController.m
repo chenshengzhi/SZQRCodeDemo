@@ -43,6 +43,13 @@
                 }
             }];
             [weakSelf.navigationController pushViewController:vc animated:YES];
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"没有权限访问相机"
+                                                                message:@"请在 \"设置 - 隐私 - 相机\" 设置允许访问相机。"
+                                                               delegate:nil
+                                                      cancelButtonTitle:nil
+                                                      otherButtonTitles:@"确定", nil];
+            [alertView show];
         }
     }];
 }
