@@ -42,6 +42,7 @@
                     }
                 }
             }];
+            vc.qrcodeOptions = SZQRCodeOptionAll;
             [weakSelf.navigationController pushViewController:vc animated:YES];
         } else {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"没有权限访问相机"

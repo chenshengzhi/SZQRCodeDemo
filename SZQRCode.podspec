@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
   s.name         = "SZQRCode"
 
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
 
   s.summary      = "simple qrcode view controller"
 

@@ -7,12 +7,10 @@
 //
 
 #import "SZQRCodeViewController.h"
-#import "SZQRCodeCoverView.h"
 @import AVFoundation;
 
 @interface SZQRCodeViewController () <AVCaptureMetadataOutputObjectsDelegate>
 
-@property (nonatomic, strong) SZQRCodeCoverView *maskView;
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 
 @end
@@ -47,8 +45,15 @@
 }
 
 #pragma mark - life cycle -
-- (instancetype)initWithScaneResultBlock:(SZQRCodeScaneResultBlock)scaneResultBlock {
+- (instancetype)init {
     if (self = [super init]) {
+        self.qrcodeOptions = SZQRCodeOptionQRCode;
+    }
+    return self;
+}
+
+- (instancetype)initWithScaneResultBlock:(SZQRCodeScaneResultBlock)scaneResultBlock {
+    if (self = [self init]) {
         _scaneResultBlock = scaneResultBlock;
     }
     return self;
@@ -74,10 +79,18 @@
     AVCaptureMetadataOutput *metadataOutput = [[AVCaptureMetadataOutput alloc] init];
     [self.captureSession addOutput:metadataOutput];
     [metadataOutput setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-    if ([metadataOutput.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeQRCode]) {
-        metadataOutput.metadataObjectTypes = [NSArray arrayWithObject:AVMetadataObjectTypeQRCode];
+
+    NSMutableArray *metadataObjectTypes = [NSMutableArray array];
+    if ((self.qrcodeOptions & SZQRCodeOptionQRCode) > 0) {
+        [metadataObjectTypes addObject:AVMetadataObjectTypeQRCode];
     }
-    
+    if ((self.qrcodeOptions & SZQRCodeOptionQRCodeBarCode) > 0) {
+        [metadataObjectTypes addObject:AVMetadataObjectTypeEAN13Code];
+        [metadataObjectTypes addObject:AVMetadataObjectTypeEAN8Code];
+        [metadataObjectTypes addObject:AVMetadataObjectTypeCode128Code];
+    }
+    metadataOutput.metadataObjectTypes = metadataObjectTypes;
+
     AVCaptureVideoPreviewLayer *previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.captureSession];
     previewLayer.frame = self.view.bounds;
     previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
