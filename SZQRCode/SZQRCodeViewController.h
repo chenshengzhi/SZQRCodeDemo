@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SZQRCodeCoverView.h"
+#import <SZQRCodeCoverView/SZQRCodeCoverView.h>
 
 typedef NS_OPTIONS(NSUInteger, SZQRCodeOptions) {
     SZQRCodeOptionQRCode = 1 << 0,
