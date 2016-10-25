@@ -1,12 +1,12 @@
 PODS:
-  - SZQRCodeCoverView (0.0.5)
+  - SZQRCodeCoverView (0.0.6)
 
 DEPENDENCIES:
   - SZQRCodeCoverView
 
 SPEC CHECKSUMS:
-  SZQRCodeCoverView: a14a733accf802d00dc2735ea0bfc58e1bd65b9d
+  SZQRCodeCoverView: 02eec26a0f4936feb260a1434ebece194b8e6670
 
 PODFILE CHECKSUM: 562cf9d59454e90ab59b384a470a3a0d48662be4
 
-COCOAPODS: 1.1.0.rc.3
+COCOAPODS: 1.1.1
